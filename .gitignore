@@ -4,6 +4,7 @@ build/
 temp*
 devel/
 install/
+data/
 
 # Prerequisites
 *.d
