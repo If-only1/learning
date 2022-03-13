@@ -60,9 +60,13 @@ int getArrayLength2(T &a)
     return sizeof(a) / sizeof(a[0]);
 }
 
-void print_array(int array[], int size)
+void print_array(int array[])
 {
+    auto size = sizeof(array) / sizeof(array[0]);
     cout << "size:" << size << endl;
+    cout << " sizeof(array):" << sizeof(array) << endl;
+    cout << "sizeof(array[0]:" << sizeof(array[0]) << endl;
+
     for (auto i = 0; i < size; i++)
     {
         cout << array[i] << ',';
@@ -86,7 +90,7 @@ int main()
     fstream in{p1, ios::in};
     int b[3]{1, 2, 3};
     read_array(in, name, sizeof(a) / sizeof(a[0]), b);
-    print_array(a, getArrayLength2(a));
-    print_array(b, getArrayLength2(b));
+    print_array(a);
+    print_array(b);
     return 0;
 }
