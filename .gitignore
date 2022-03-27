@@ -5,6 +5,7 @@ temp*
 devel/
 install/
 data/
+.DS_Store
 
 # Prerequisites
 *.d
