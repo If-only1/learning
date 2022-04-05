@@ -39,6 +39,8 @@ class Vec2d {
     float &at(const int i);
     float &operator[](const int &i);
 
+    Vec2d operator-() const;
+
    private:
     float x;
     float y;

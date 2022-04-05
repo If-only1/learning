@@ -1,9 +1,9 @@
+#include "vec2d.h"
+
 #include <math.h>
 
 #include <exception>
 #include <sstream>
-
-#include "vec2d.h"
 
 Vec2d::Vec2d(float x, float y) {
     this->x = x;
@@ -72,3 +72,4 @@ float &Vec2d::at(const int i) {
     }
 }
 float &Vec2d::operator[](const int &i) { return this->at(i); }
+Vec2d Vec2d::operator-() const { return this->neg(); }
