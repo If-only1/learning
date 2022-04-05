@@ -163,8 +163,10 @@ add_executable(turtle_command_server src/turtle_command_server.cpp)
 target_link_libraries(turtle_command_server ${catkin_LIBRARIES})
 
 add_executable(person_server src/person_server.cpp)
+add_dependencies(person_server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(person_server ${catkin_LIBRARIES})
 add_executable(person_client src/person_client.cpp)
+add_dependencies(person_client ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(person_client ${catkin_LIBRARIES})
 
 #############
