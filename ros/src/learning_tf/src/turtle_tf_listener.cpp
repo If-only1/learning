@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
     while (ros::ok()) {
         tf::StampedTransform transform;
         try {
-            listener.waitForTransform("/turtle2", "/turtle1",ros::Time(0),ros::Duration(3)));
+            listener.waitForTransform("/turtle2", "/turtle1", ros::Time(0), ros::Duration(3));
             listener.lookupTransform("/turtle2", "/turtle1", ros::Time(0), transform);
         } catch (tf::TransformException ex) {
             ROS_ERROR("%s", ex.what());
