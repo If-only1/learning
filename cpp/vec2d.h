@@ -1,4 +1,6 @@
+#include <iostream>
 #include <string>
+
 class Vec2d {
    public:
     Vec2d(float x, float y);
@@ -40,6 +42,13 @@ class Vec2d {
     float &operator[](const int &i);
 
     Vec2d operator-() const;
+    Vec2d &operator++();
+    Vec2d &operator--();
+    Vec2d operator++(int a);
+    Vec2d operator--(int a);
+    friend std::ostream &operator<<(std::ostream &os, Vec2d v);
+    friend std::istream &operator>>(std::istream &is, Vec2d &v);
+    operator double();
 
    private:
     float x;

@@ -73,3 +73,31 @@ float &Vec2d::at(const int i) {
 }
 float &Vec2d::operator[](const int &i) { return this->at(i); }
 Vec2d Vec2d::operator-() const { return this->neg(); }
+Vec2d &Vec2d::operator++() {
+    x++, y++;
+    return *this;
+}
+Vec2d &Vec2d::operator--() {
+    x--, y--;
+    return *this;
+}
+Vec2d Vec2d::operator++(int a) {
+    Vec2d temp = Vec2d(x, y);
+    x++, y++;
+    return temp;
+}
+Vec2d Vec2d::operator--(int a) {
+    Vec2d temp = Vec2d(x, y);
+    x--, y--;
+    return temp;
+}
+
+std::ostream &operator<<(std::ostream &os, Vec2d v) {
+    os << v.to_string();
+    return os;
+}
+std::istream &operator>>(std::istream &is, Vec2d &v) {
+    is >> v.x >> v.y;
+    return is;
+}
+Vec2d::operator double() { return this->length(); }
