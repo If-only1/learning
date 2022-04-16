@@ -1,0 +1,8 @@
+MANIFEST.in
+setup.py
+strprint/__init__.py
+strprint/temp.py
+strprint.egg-info/PKG-INFO
+strprint.egg-info/SOURCES.txt
+strprint.egg-info/dependency_links.txt
+strprint.egg-info/top_level.txt
