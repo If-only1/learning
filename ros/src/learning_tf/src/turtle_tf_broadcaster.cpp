@@ -6,7 +6,7 @@
 using namespace std;
 string turtle_name;
 void callback_fn(const turtlesim::PoseConstPtr& msg) {
-    tf::TransformBroadcaster br;
+    static tf::TransformBroadcaster br;
     tf::Transform transform;
     transform.setOrigin(tf::Vector3(msg->x, msg->y, 0));
     tf::Quaternion q;
