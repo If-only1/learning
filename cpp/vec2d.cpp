@@ -1,9 +1,9 @@
-#include "vec2d.h"
-
 #include <math.h>
 
-#include <exception>
 #include <sstream>
+
+#include "range_exception.h"
+#include "vec2d.h"
 
 Vec2d::Vec2d(float x, float y) {
     this->x = x;
@@ -67,8 +67,7 @@ float &Vec2d::at(const int i) {
     } else if (i == 1) {
         return this->y;
     } else {
-        std::out_of_range e("Index out of range");
-        throw e;
+        throw RangeException(2, i);
     }
 }
 float &Vec2d::operator[](const int &i) { return this->at(i); }
