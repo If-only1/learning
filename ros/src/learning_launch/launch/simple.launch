@@ -1,0 +1,5 @@
+<launch>
+<node pkg="learning_topic" type='person_publisher' name='publisher' output='screen'/>
+<node pkg="learning_topic" type='person_subscriber' name='subscriber' output='screen'/>
+
+</launch>
