@@ -3,20 +3,21 @@
 #include <string>
 #include <vector>
 using namespace std;
-template <typename T1, typename T2>
-void print_map(const map<T1, T2>& a) {
-    for (auto i = a.begin(); i != a.end(); i++) {
-        cout << i->first << ':' << i->second << endl;
-    }
+void test(const int a[]) {
+    cout << typeid(a).name() << endl;
+    int v = 1000;
+    a = &v;
+    cout << typeid(a).name() << endl;
 }
 
 int main() {
-    map<string, int> a;
-    a.insert(map<string, int>::value_type("li", 1));
-    a["li"] = 2;
-    a["li2"] = 2;
-
-    cout << a["li"];
-    print_map(a);
-    return 0;
+    int a[]{1, 23};
+    const int* p = a;
+    int v = 1000;
+    p = &v;
+    cout << typeid(a).name() << endl;
+    cout << typeid(p).name() << endl;
+    test(a);
+    cout << a[0];
+    cout << a[1];
 }
