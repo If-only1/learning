@@ -39,3 +39,5 @@ data/
 *.exe
 *.out
 *.app
+
+*.pth
